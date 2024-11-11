@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import React from "react";
 import ThemeProvider from "@/context/theme";
-import Navbar from "@/components/navigation/navbar";
 
 const groteskSan = localFont({
   src: "./fonts/HostGroteskVF.ttf",
@@ -34,7 +33,6 @@ export default function RootLayout({
         className={`${groteskSan.className} antialiased`}
       >
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Navbar />
           {children}
       </ThemeProvider>
       </body>
