@@ -29,11 +29,18 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
     const session = await auth();
   return (
     <html lang="en" suppressHydrationWarning>
+    <head>
+        <link
+            rel="stylesheet"
+            type='text/css'
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+    </head>
     <SessionProvider session={session}>
-      <body
-        className={`${groteskSan.className} antialiased`}
-      >
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <body
+            className={`${groteskSan.className} antialiased`}
+        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
       </ThemeProvider>
       <Toaster />
